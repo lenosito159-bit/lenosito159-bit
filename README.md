@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/galactic-intro.svg" width="100%" alt="Lenin Silva · Ingeniero empresarial. Ideas con visión. Proyectos con propósito." />
+<img src="./assets/galactic-universe.svg" width="100%" alt="Lenin Silva · Ingeniero empresarial. Portada de universo con animación infinita." />
 
 <br />
 
