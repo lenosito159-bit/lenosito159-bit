@@ -1,18 +1,25 @@
-<div align="center">
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/galaxy-still.png">
+    <img src="assets/galaxy.gif" width="960" alt="Lenin Silva · Ingeniero empresarial. Estrategia · Tecnología · Innovación. Una nebulosa violeta y azul rodea un planeta con anillos.">
+  </picture>
+</p>
 
-<img src="./assets/galactic-universe.svg" width="100%" alt="Lenin Silva · Ingeniero empresarial. Portada de universo con animación infinita." />
+<h1 align="center">Lenin Silva · Ingeniero empresarial</h1>
+<p align="center"><strong>Estrategia · Tecnología · Innovación</strong></p>
 
-<br />
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/intro-still.png">
+    <img src="assets/intro.gif" width="800" alt="Ingeniero empresarial · Estrategia y tecnología · Construyendo proyectos con propósito.">
+  </picture>
+</p>
 
-**ESTRATEGIA EMPRESARIAL &nbsp; ✦ &nbsp; TECNOLOGÍA &nbsp; ✦ &nbsp; INNOVACIÓN**
+<p align="center"><a href="assets/PERFIL-ESTATICO.md">Ver perfil sin animaciones</a> · <a href="#proyectos">Proyectos</a> · <a href="#tecnologias">Tecnologías</a></p>
 
-[Sobre mí](#sobre-mí) &nbsp; · &nbsp; [Mi enfoque](#mi-enfoque) &nbsp; · &nbsp; [Proyectos](#proyectos) &nbsp; · &nbsp; [Tecnologías](#tecnologías)
+---
 
-</div>
-
-<br />
-
-## Sobre mí
+## 🌌 Mi universo
 
 Hola, soy **Lenin Silva**, **ingeniero empresarial**.
 
@@ -20,13 +27,25 @@ Me interesa conectar la visión de negocio con la tecnología: entender una nece
 
 > **Mi misión:** transformar ideas en proyectos con propósito.
 
-## Mi enfoque
 
-| 🧭 Estrategia | 🛠️ Construcción | 🌌 Evolución |
-| :--- | :--- | :--- |
-| Entender el problema y el valor que puede generar una solución. | Llevar las ideas a experiencias y herramientas digitales. | Aprender, probar y mejorar con cada proyecto. |
+### Mi enfoque
 
-## Proyectos
+- **🧭 Estrategia:** entender el problema y el valor que puede generar una solución.
+- **🛠️ Construcción:** llevar las ideas a experiencias y herramientas digitales.
+- **🌌 Evolución:** aprender, probar y mejorar con cada proyecto.
+
+
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/orbit-signals-still.png">
+    <img src="assets/orbit-signals.gif" width="560" alt="Iconos animados: un cohete en vuelo, un planeta flotante, una galaxia en rotación, estrellas que brillan y un satélite en órbita.">
+  </picture>
+</p>
+<p align="center">🚀 Explorar &nbsp; · &nbsp; 🪐 Conectar &nbsp; · &nbsp; 🌌 Imaginar &nbsp; · &nbsp; ✨ Crear &nbsp; · &nbsp; 🛰️ Construir</p>
+
+<a id="proyectos"></a>
+
+## 🚀 Proyectos
 
 Una primera exploración de mis repositorios públicos:
 
@@ -46,7 +65,11 @@ Proyecto para automatizar pruebas de APIs, validar respuestas y consultar un cat
 
 [Explorar repositorio ↗](https://github.com/lenosito159-bit/Visible-Digital)
 
-## Tecnologías
+[Todos mis repositorios →](https://github.com/lenosito159-bit?tab=repositories)
+
+<a id="tecnologias"></a>
+
+## 🛰️ Tecnologías
 
 Herramientas presentes en mis proyectos públicos:
 
@@ -56,12 +79,11 @@ Herramientas presentes en mis proyectos públicos:
 
 **Colaboración y automatización** &nbsp; GitHub · GitHub Actions
 
-<br />
 
-<div align="center">
+---
 
-**Cada proyecto es una nueva órbita.**
+<p align="center"><strong>✨ Estrategia para orientar. Tecnología para construir. Innovación para avanzar.</strong></p>
 
-[Explora mis repositorios públicos →](https://github.com/lenosito159-bit?tab=repositories)
+### Conectemos
 
-</div>
+[GitHub · @lenosito159-bit](https://github.com/lenosito159-bit)
