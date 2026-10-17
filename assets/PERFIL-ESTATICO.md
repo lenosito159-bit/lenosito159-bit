@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="galaxy-still.png" width="960" alt="Lenin Silva · Ingeniero empresarial. Estrategia · Tecnología · Innovación. Una galaxia espiral violeta y azul gira con polvo estelar en órbita y un planeta con anillos.">
+  <img src="galaxy-motion-still.png" width="960" alt="Lenin Silva · Ingeniero empresarial. Estrategia · Tecnología · Innovación. Una galaxia espiral violeta y azul gira con polvo estelar en órbita y un planeta con anillos.">
 </p>
 
 <h1 align="center">Lenin Silva · Ingeniero empresarial</h1>

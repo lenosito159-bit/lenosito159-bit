@@ -45,14 +45,15 @@ def banner(t):
         swirl = 1 + .24 * np.sin(x / 61 + y / 43 + 2 * t + phase)
         g = np.exp(-((x - cx) / sx) ** 2 - ((y - cy) / sy) ** 2) * swirl
         cloud += g[..., None] * color
-    # A recognizable inclined spiral galaxy fills the background. Its arms
-    # rotate through 120 degrees per loop (threefold symmetry gives a seamless
-    # return), while luminous knots and dark dust lanes travel with the arms.
-    gx, gy = x - 730, (y - 172) / .72
+    # Full rotation and a closed drifting orbit make motion unmistakable.
+    # All terms return to their initial phase at 2*pi.
+    galaxy_x = 730 + 22 * math.cos(t)
+    galaxy_y = 172 + 17 * math.sin(t)
+    gx, gy = x - galaxy_x, (y - galaxy_y) / .72
     u, v = gx * .97 - gy * .24, gx * .24 + gy * .97
     radius = np.sqrt(u*u + v*v)
     angle = np.arctan2(v, u)
-    phase = 3 * angle - 6.5 * np.log1p(radius / 23) - t
+    phase = 3 * angle - 6.5 * np.log1p(radius / 23) - 3 * t
     arms = np.exp(3.8 * (np.cos(phase) - 1))
     disk = np.exp(-(radius / 218) ** 1.5)
     knots = .72 + .28 * np.cos(radius / 12 + 2 * phase)
@@ -82,8 +83,12 @@ def banner(t):
     for i in range(70):
         a = rng.uniform(0, TAU) + t
         r = rng.uniform(50, 245)
-        xx, yy = 730 + r * math.cos(a), 172 + .66 * r * math.sin(a)
+        xx, yy = galaxy_x + r * math.cos(a), galaxy_y + .66 * r * math.sin(a)
         bright = int(130 + 85 * (.5 + .5 * math.sin(2*t + i)))
+        if i % 7 == 0:
+            trail = [(galaxy_x + r * math.cos(a - j / 100),
+                      galaxy_y + .66 * r * math.sin(a - j / 100)) for j in range(11)]
+            d.line(trail, fill='#7c91db', width=2)
         d.ellipse((xx, yy, xx + 1.5, yy + 1.5), fill=(bright, bright, 255))
     # A smaller foreground planet leaves the spiral galaxy clearly visible.
     px, py = 843, 313 + 7 * math.sin(t)
@@ -167,7 +172,7 @@ def phrase_frame(index, alpha):
 
 if __name__ == '__main__':
     frames = 96
-    save([banner(TAU*i/frames) for i in range(frames)], 'galaxy', 50)
+    save([banner(TAU*i/frames) for i in range(frames)], 'galaxy-motion', 50)
     save([signals(TAU*i/frames) for i in range(frames)], 'orbit-signals', 50)
     phrases = []
     for i in range(3):
