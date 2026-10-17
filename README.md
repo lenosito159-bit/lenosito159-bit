@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/galaxy-still.png">
-    <img src="assets/galaxy.gif" width="960" alt="Lenin Silva · Ingeniero empresarial. Estrategia · Tecnología · Innovación. Una nebulosa violeta y azul rodea un planeta con anillos.">
+    <img src="assets/galaxy.gif" width="960" alt="Lenin Silva · Ingeniero empresarial. Estrategia · Tecnología · Innovación. Una galaxia espiral violeta y azul gira con polvo estelar en órbita y un planeta con anillos.">
   </picture>
 </p>
 

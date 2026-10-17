@@ -8,7 +8,7 @@ Arte original generado localmente; sin rastreadores, servicios de imágenes ni p
 | `orbit-signals.gif` | 560 × 76 | 4,8 s | 20 fps |
 | `intro.gif` | 800 × 78 | 11,52 s | Transiciones de 80 ms y pausas de lectura |
 
-Los tres GIF pesan en conjunto aproximadamente **2,85 MiB**. Se utiliza una paleta compartida de 128 colores y compresión de zonas sin cambios. Todos tienen bucle infinito. Las nebulosas, partículas, planeta, luna e iconos siguen funciones periódicas: el último fotograma continúa en el primero sin reiniciar posiciones. Las frases se desvanecen sobre el mismo fondo entre estados; las pausas conservan su duración al optimizar fotogramas repetidos.
+Los tres GIF pesan en conjunto aproximadamente **3,54 MiB**. Se utiliza una paleta compartida de 128 colores y compresión de zonas sin cambios. Todos tienen bucle infinito. La galaxia espiral ocupa el fondo, con brazos luminosos que giran, bandas de polvo oscuro y partículas en órbita. El planeta aparece en primer plano sin tapar el núcleo. La galaxia, nebulosas, partículas, planeta, luna e iconos siguen funciones periódicas: el último fotograma continúa en el primero sin reiniciar posiciones. Las frases se desvanecen sobre el mismo fondo entre estados; las pausas conservan su duración al optimizar fotogramas repetidos.
 
 ## Accesibilidad y GitHub
 

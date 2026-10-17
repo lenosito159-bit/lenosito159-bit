@@ -45,6 +45,25 @@ def banner(t):
         swirl = 1 + .24 * np.sin(x / 61 + y / 43 + 2 * t + phase)
         g = np.exp(-((x - cx) / sx) ** 2 - ((y - cy) / sy) ** 2) * swirl
         cloud += g[..., None] * color
+    # A recognizable inclined spiral galaxy fills the background. Its arms
+    # rotate through 120 degrees per loop (threefold symmetry gives a seamless
+    # return), while luminous knots and dark dust lanes travel with the arms.
+    gx, gy = x - 730, (y - 172) / .72
+    u, v = gx * .97 - gy * .24, gx * .24 + gy * .97
+    radius = np.sqrt(u*u + v*v)
+    angle = np.arctan2(v, u)
+    phase = 3 * angle - 6.5 * np.log1p(radius / 23) - t
+    arms = np.exp(3.8 * (np.cos(phase) - 1))
+    disk = np.exp(-(radius / 218) ** 1.5)
+    knots = .72 + .28 * np.cos(radius / 12 + 2 * phase)
+    dust = np.exp(12 * (np.cos(phase - .38) - 1))
+    core = np.exp(-(radius / 30) ** 1.4)
+    halo = np.exp(-(radius / 80) ** 1.5)
+    cloud += (arms * disk * knots)[..., None] * (112, 74, 208)
+    cloud += (disk * .28)[..., None] * (37, 67, 136)
+    cloud *= (1 - .48 * dust * disk)[..., None]
+    cloud += core[..., None] * (208, 190, 229)
+    cloud += halo[..., None] * (40, 35, 65)
     cloud += (4, 6, 17)
     im = Image.fromarray(np.uint8(np.clip(cloud, 0, 255)))
     d = ImageDraw.Draw(im)
@@ -59,17 +78,24 @@ def banner(t):
         if i % 19 == 0:
             d.line((xx - 3, yy, xx + 4, yy), fill=(brightness, brightness, 240))
             d.line((xx, yy - 3, xx, yy + 4), fill=(brightness, brightness, 240))
-    # Planet and tilted rings, drawn behind and in front of the shaded sphere.
-    px, py = 770, 192 + 11 * math.sin(t)
+    # Bright orbiting dust makes the background motion visible even on mobile.
+    for i in range(70):
+        a = rng.uniform(0, TAU) + t
+        r = rng.uniform(50, 245)
+        xx, yy = 730 + r * math.cos(a), 172 + .66 * r * math.sin(a)
+        bright = int(130 + 85 * (.5 + .5 * math.sin(2*t + i)))
+        d.ellipse((xx, yy, xx + 1.5, yy + 1.5), fill=(bright, bright, 255))
+    # A smaller foreground planet leaves the spiral galaxy clearly visible.
+    px, py = 843, 313 + 7 * math.sin(t)
     def ring(front):
-        for radius, color, width in [(139, '#605ea9', 2), (126, '#b9adff', 3), (119, '#5d92e2', 1)]:
+        for radius, color, width in [(84, '#605ea9', 2), (76, '#b9adff', 2), (71, '#5d92e2', 1)]:
             points = []
             for a in np.linspace(0 if front else math.pi, math.pi if front else TAU, 100):
-                u, v = radius * math.cos(a), 32 * math.sin(a)
+                u, v = radius * math.cos(a), 19 * math.sin(a)
                 points.append((px + u * .94 - v * -.34, py + u * -.34 + v * .94))
             d.line(points, fill=color, width=width)
     ring(False)
-    r = 76
+    r = 44
     for row in range(-r, r + 1):
         span = math.sqrt(max(0, r * r - row * row))
         for col in range(-int(span), int(span) + 1):
@@ -80,7 +106,7 @@ def banner(t):
             d.point((px + col, py + row), fill=color)
     ring(True)
     # A tiny moon travels on an actual closed orbit.
-    mx, my = px + 158 * math.cos(t), py + 63 * math.sin(t)
+    mx, my = px + 98 * math.cos(t), py + 39 * math.sin(t)
     d.ellipse((mx - 4, my - 4, mx + 4, my + 4), fill='#9ccaff')
     # Quiet opaque panel keeps text legible through every frame.
     d.rounded_rectangle((40, 83, 593, 308), radius=20, fill='#090c20', outline='#282340', width=1)
